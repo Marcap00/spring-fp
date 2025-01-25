@@ -1,4 +1,7 @@
 package dev.capp.repository;
 
-public interface CrudRepository {
+import java.util.List;
+
+public interface CrudRepository<Type> {
+    List<Type> findAll();
 }
