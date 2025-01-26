@@ -12,18 +12,22 @@ import org.springframework.context.support.AbstractApplicationContext;
 @ComponentScan
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         /*TrainService service = new TrainService();
         System.out.println(service.list());*/
         /* ----> */
         /* ApplicationContext --> This is a central interface to provide configuration for an application  */
         /* AnnotationConfigApplicationContext --> This is the class we're going to use to work with this implementation*/
+
         AbstractApplicationContext applicationContext = new AnnotationConfigApplicationContext(Main.class);
-        /*TrainService service = applicationContext.getBean("trainService", TrainService.class);
-        System.out.println(service.list());*/
+
+        TrainService service = applicationContext.getBean("trainService", TrainService.class);
+        System.out.println(service.list());
 
         for (String bean : applicationContext.getBeanDefinitionNames()) {
             System.out.println("Bean --->" + bean);
         }
+
+        applicationContext.close();
     }
 }
