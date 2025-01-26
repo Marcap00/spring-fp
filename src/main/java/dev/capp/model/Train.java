@@ -1,11 +1,17 @@
 package dev.capp.model;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Train {
 
     private int trainId;
     private String nameCompany;
     private String trainCode;
     private int year;
+
+    public Train() {
+    }
 
     public Train (int trainId, String nameCompany, String trainCode, int year) {
         this.trainId = trainId;

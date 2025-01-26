@@ -7,10 +7,9 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@ComponentScan("dev.capp")
 public class AppConfig {
 
-    /*@Bean("trainService")
+    @Bean("trainService")
     public TrainService getTrainService() {
         return new TrainService(getTrainRepository());
     }
@@ -18,5 +17,5 @@ public class AppConfig {
     @Bean("trainRepository")
     public TrainRepository getTrainRepository() {
         return new TrainRepository();
-    }*/
+    }
 }
